@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:padding="8dp">
     <TextView
-        android:text="4:00"
+        local:MvxBind="Text Time"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,15 +17,29 @@
         android:id="@+id/start"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Hello" />
+        android:text="@string/Hello"
+        local:MvxBind="Click StartCommand" />
     <Button
         android:text="Pause"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/pause" />
+        android:id="@+id/pause"
+        local:MvxBind="Click PauseCommand" />
     <Button
         android:text="Stop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/stop" />
+        android:id="@+id/stop"
+        local:MvxBind="Click StopCommand" />
+    <EditText
+        android:id="@+id/customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Text CustomerName, Mode=TwoWay" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/description"
+        local:MvxBind="Text RoastDescription" />
 </LinearLayout>
